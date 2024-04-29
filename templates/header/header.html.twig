@@ -35,8 +35,7 @@
     </div>
     <div class="bottom_header dark_skin main_menu_uppercase">
         <div class="container">
-            <div class="navbar navbar-expand-lg">
-                <a routerlink="/" class="navbard-brand" ng-reflect-router-link="/" href="/"><h2>Game Store</h2></a>
+            <div class="navbar navbar-expand-lg"> 
                 <button type="button" 
                         data-bs-toggle="collapse" 
                         data-bs-target="#navbarSupportedContent" 
@@ -44,15 +43,21 @@
                         class="navbar-toggler collapsed">
                         <span class="ion-android-menu"></span>
                 </button>
+                <a routerlink="/" class="navbard-brand" ng-reflect-router-link="/" href="/"><h2>Game Store</h2></a>
                 <div id="navbarSupportedContent" class="navbar-collapse justify-content-end collapse" style="">
                     <ul class="navbar-nav">
-                        <li class="dropdown"><a routerlink="/" class="nav-link" ng-reflect-router-link="/" href="/">Accueil</a></li>
+                        <li class="dropdown"><a routerlink="/" 
+                            class="nav-link" 
+                            ng-reflect-router-link="/" 
+                            href="/">Accueil</a></li>
+
                         <li class="dropdown"><a href="#"
                             data-bs-toggle="dropdown" 
-                            class="dropdown-toggle nav-link active"
+                            class="dropdown-toggle nav-link"
                             aria-expanded="false">Pages</a>
-                            <div  class="dropdown-menu">
-                                <ul >
+
+                            <div class="dropdown-menu">
+                                <ul>
                                     <li ><a routerlink="/about"
                                             class="dropdown-item nav-link nav_item" 
                                             ng-reflect-router-link="/about"
@@ -86,152 +91,161 @@
                             </div>
                         </li>
                         <li class="dropdown dropdown-mega-menu">
-                        <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle nav-link" aria-expanded="false">Produits</a>
+                            <a  href="#" data-bs-toggle="dropdown" 
+                                class="dropdown-toggle nav-link" 
+                                aria-expanded="false">Produits</a>
+
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
                                     <li class="mega-menu-col col-lg-3">
-                                        <ul >
+                                        <ul>
                                             <li class="dropdown-header">Accessoires</li>
                                             <li ><a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Casque Playstation 4</a>
+                                                ng-reflect-router-link="#"
+                                                href="#">Casques Playstation 4</a></li>
 
-                                                <a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Casque Playstation 5</a>
+                                            <li><a class="dropdown-item nav-link nav_item"
+                                                ng-reflect-router-link="#"
+                                                href="#">Casques Playstation 5</a></li>
 
-                                                <a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Manettes Playstation 4</a>
+                                            <li><a class="dropdown-item nav-link nav_item"
+                                                ng-reflect-router-link="#"
+                                                href="#">Manettes Playstation 4</a></li>
 
-                                                <a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Manette Playstation 5</a>
+                                            <li><a class="dropdown-item nav-link nav_item"
+                                                ng-reflect-router-link="#"
+                                                href="#">Manettes Playstation 5</a></li>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li  class="mega-menu-col col-lg-3">
+                                    <li class="mega-menu-col col-lg-3">
                                         <ul >
-                                            <li  class="dropdown-header">Consoles</li>
+                                            <li class="dropdown-header">Consoles</li>
                                             <li ><a class="dropdown-item nav-link nav_item"
                                                     ng-reflect-router-link="#"
-                                                    href="#">Playstation 4</a>
-                                                <a class="dropdown-item nav-link nav_item"
+                                                    href="#">Playstation 4</a></li>
+
+                                            <li><a class="dropdown-item nav-link nav_item"
                                                     ng-reflect-router-link="#"
-                                                    href="#">Playstation 5</a>
-                                                <a class="dropdown-item nav-link nav_item"
+                                                    href="#">Playstation 5</a></li>
+
+                                            <li><a class="dropdown-item nav-link nav_item"
                                                     ng-reflect-router-link="#"
-                                                    href="#">Xbox One S</a>
-                                                <a class="dropdown-item nav-link nav_item"
+                                                    href="#">Xbox One S</a></li>
+
+                                            <li><a class="dropdown-item nav-link nav_item"
                                                     ng-reflect-router-link="#"
-                                                    href="#">Xbox Series</a>
+                                                    href="#">Xbox Series</a></li>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li  class="mega-menu-col col-lg-3">
-                                        <ul >
-                                            <li  class="dropdown-header">Jeux</li>
-                                            <li ><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,bikini-unicolore-cte"
-                                                    href="/product/bikini-unicolore-ctel-shop">Bikini unicolore
-                                                    côtelé</a><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,culotte-en-dentelle-"
-                                                    href="/product/culotte-en-dentelle-mudey">Culotte en dentelle</a><a
-                                                     class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,culotte-en-dentelle-"
-                                                    href="/product/culotte-en-dentelle-espero">Culotte en dentelle</a><a
-                                                     class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,culotte-en-dentelle"
-                                                    href="/product/culotte-en-dentelle">Culotte en dentelle</a><a
-                                                     class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,short-paillettes-bro"
-                                                    href="/product/short-paillettes-broderie-dchir">Short à paillettes à
-                                                    broderie déchiré</a>
-                                            </li>
+                                    <li class="mega-menu-col col-lg-3">
+                                        <ul>
+                                            <li class="dropdown-header">Jeux</li>
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Jeux Playstation 4</a></li>
+
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Jeux Playstation 5</a></li>
+                                                    
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Jeux Xbox One S</a></li>
+                                                    
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Jeux Xbox Series</a></li>
                                         </ul>
                                     </li>
-                                    <li  class="mega-menu-col col-lg-3">
-                                        <ul >
-                                            <li  class="dropdown-header">Services</li>
-                                            <li ><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,pantalon-taille-haut"
-                                                    href="/product/pantalon-taille-haute-carreaux-avec-zip">Pantalon
-                                                    taille haute à carreaux avec zip</a><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,pantalon-carreaux-av"
-                                                    href="/product/pantalon-carreaux-avec-cordon-la-taille">Pantalon à
-                                                    carreaux avec cordon à la taille</a><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,pantalon-taille-fron"
-                                                    href="/product/pantalon-taille-fronce-poches">Pantalon à taille
-                                                    froncée à poches</a><a 
-                                                    class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="/,product,pantalon-unicolore-t"
-                                                    href="/product/pantalon-unicolore-taille-haute">Pantalon unicolore
-                                                    taille haute</a>
-                                            </li>
+                                    <li class="mega-menu-col col-lg-3">
+                                        <ul>
+                                            <li class="dropdown-header">Services</li>
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Services Playstation 4</a></li>
+                                                    
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Services Playstation 5</a></li>
+                                                    
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Services Xbox One</a></li>
+                                                    
+                                            <li><a  class="dropdown-item nav-link nav_item"
+                                                    ng-reflect-router-link="#"
+                                                    href="#">Services Xbox Series</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                                <div  class="d-lg-flex menu_banners row g-3 px-3">
-                                    <div  class="col-sm-4">
-                                        <div  class="header-banner"><img
-                                                 alt="menu_banner1"
-                                                src="/assets/files/megaCollection/11736749706614988691774027121876766721152610541684827357419.png">
-                                            <div  class="banne_info">
-                                                <h6 >10% de remise</h6>
-                                                <h4 >Nouvel arrivage</h4><a
-                                                     href="http://localhost:4300/">Acheter</a>
+                                <div class="d-lg-flex menu_banners row g-3 px-3">
+                                    <div class="col-sm-4">
+                                        <div class="header-banner"><img
+                                                alt="menu_banner1"
+                                                src="/assets/files/megaCollection/playstation5.jpg">
+                                            <div class="banne_info mt-4">
+                                                <h6>10% de remise</h6>
+                                                <h4>Nouveautés</h4>
+                                                <a href="http://localhost:4300/">Acheter</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div  class="col-sm-4">
-                                        <div  class="header-banner"><img
-                                                 alt="menu_banner1"
-                                                src="/assets/files/megaCollection/8932488097310286313588503554459963159142614451684826970123.png">
-                                            <div  class="banne_info">
+                                    <div class="col-sm-4">
+                                        <div class="header-banner"><img
+                                                alt="menu_banner1"
+                                                src="/assets/files/megaCollection/playstation4.jpg">
+                                            <div class="banne_info mt-4">
                                                 <h6 >15% de remise</h6>
-                                                <h4 >Mode Homme</h4><a
-                                                     href="http://localhost:4300/">Acheter</a>
+                                                <h4 >Playstaytion 4</h4>
+                                                <a href="http://localhost:4300/">Acheter</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div  class="col-sm-4">
-                                        <div  class="header-banner"><img
-                                                 alt="menu_banner1"
-                                                src="/assets/files/megaCollection/1412527185807988177642011518607795945067036381684827015102.png">
-                                            <div  class="banne_info">
-                                                <h6 >23% Off</h6>
-                                                <h4 >Mode Enfants</h4><a
-                                                     href="http://localhost:4300/">Acheter</a>
+                                    <div class="col-sm-4">
+                                        <div class="header-banner"><img
+                                                alt="menu_banner1"
+                                                src="/assets/files/megaCollection/xbos.jpg">
+                                            <div class="banne_info mt-4">
+                                                <h6>23% de remise</h6>
+                                                <h4>Xbox One S</h4>
+                                                <a href="http://localhost:4300/">Acheter</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li  class="dropdown dropdown-mega-menu"><a
-                                 routerlink="/shop-list" class="nav-link"
-                                ng-reflect-router-link="/shop-list" href="/shop-list">Magasin</a></li>
-                        <li ><a  routerlink="/contact"
-                                class="nav-link nav_item" ng-reflect-router-link="/contact" href="/contact">Nous contacter</a></li>
+                        <li class="dropdown dropdown-mega-menu"><a
+                                routerlink="/shop-list" 
+                                class="nav-link"
+                                ng-reflect-router-link="/shop-list" 
+                                href="/shop-list">Magasin</a></li>
+                        <li ><a routerlink="/contact"
+                                class="nav-link nav_item" 
+                                ng-reflect-router-link="/contact" 
+                                href="/contact">Nous contacter</a>
+                        </li>
                     </ul>
                 </div>
-                <ul  class="navbar-nav attr-nav align-items-center">
-                    <li ><a  href="javascript:void(0);"
-                            class="nav-link search_trigger"><i 
-                                class="linearicons-magnifier"></i></a>
-                        <div  class="search_wrap"><span 
+                <ul class="navbar-nav attr-nav align-items-center">
+                    <li><a href="javascript:void(0);"
+                        class="nav-link search_trigger"><i 
+                        class="linearicons-magnifier"></i></a>
+
+                        <div class="search_wrap"><span 
                                 class="close-search"><i 
                                     class="ion-ios-close-empty"></i></span>
-                            <form  novalidate="" class="ng-untouched ng-pristine ng-valid">
-                                <input  type="text" placeholder="Search" id="search_input"
-                                    class="form-control"><button  type="submit"
-                                    class="search_icon"><i 
-                                        class="ion-ios-search-strong"></i></button></form>
+                            <form novalidate="" 
+                                class="ng-untouched ng-pristine ng-valid">
+                                <input type="text" placeholder="Search" id="search_input"
+                                    class="form-control">
+                                    <button  type="submit"
+                                            class="search_icon"><i 
+                                            class="ion-ios-search-strong"></i>
+                                    </button>
+                            </form>
                         </div>
                         <div class="search_overlay"></div>
                         <div class="search_overlay"></div>
@@ -257,99 +271,62 @@
                         <div class="search_overlay"></div>
                         <div class="search_overlay"></div>
                         <div class="search_overlay"></div>
-                        <div  class="search_overlay"></div>
+                        <div class="search_overlay"></div>
                     </li>
-                    <li  class="dropdown cart_dropdown"><a 
-                            href="#" data-bs-toggle="dropdown" class="nav-link cart_trigger"><i
+                    <li class="dropdown cart_dropdown"><a 
+                        href="#" data-bs-toggle="dropdown" class="nav-link cart_trigger"><i
                                  class="linearicons-cart"></i><span
                                  class="cart_count">31</span></a>
-                        <div  class="cart_box dropdown-menu dropdown-menu-right">
-                            <ul  class="cart_list">
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_5/36851533762117856286455670026456984987161761684087224828.webp">Culotte
-                                        en dentelle</a><span  class="cart_quantity"> 11 x
-                                        <span  class="cart_amount"><span
-                                                
-                                                class="price_symbole">23,91&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_9/116945623386141314594418897879593148825527931684087225230.webp">Culotte
-                                        unicolore (sans couture)</a><span 
-                                        class="cart_quantity"> 4 x <span 
-                                            class="cart_amount"><span 
-                                                class="price_symbole">44,54&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_7/825380258783085919054835307976332473139779511684087224936.webp">Culotte
-                                        en dentelle</a><span  class="cart_quantity"> 3 x
-                                        <span  class="cart_amount"><span
-                                                
-                                                class="price_symbole">17,17&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/970670668041335927385290724653240714148366921684565574162.webp">Bikini
-                                        unicolore côtelé</a><span  class="cart_quantity"> 4
-                                        x <span  class="cart_amount"><span
-                                                
-                                                class="price_symbole">28,24&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_4/87087411019387380483560199609827534551691041684087224752.webp">Culotte
-                                        unicolore femme (sans couture)</a><span 
-                                        class="cart_quantity"> 2 x <span 
-                                            class="cart_amount"><span 
-                                                class="price_symbole">56,07&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_2/64690629656996101166169787112869964617448491684087224479.webp">Tanga
-                                        unicolore</a><span  class="cart_quantity"> 3 x <span
-                                             class="cart_amount"><span
-                                                
-                                                class="price_symbole">38,84&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_8/10518988473111520886581236853833613928085898971684087225041.webp">Culotte
-                                        en dentelle</a><span  class="cart_quantity"> 1 x
-                                        <span  class="cart_amount"><span
-                                                
-                                                class="price_symbole">58,43&nbsp;€</span></span></span></li>
-                                <li ><a  href="#"
-                                        class="item_remove"><i  class="ion-close"></i></a><a
-                                         href="#"><img 
-                                            width="50" height="50" alt="cart_thumb1"
-                                            src="/assets/files/culottes/culotte_3/6138170893214881132536005127536132168491807951684087224669.webp">Culotte
-                                        à blocs de couleurs en dentelle</a><span 
-                                        class="cart_quantity"> 3 x <span 
-                                            class="cart_amount"><span 
-                                                class="price_symbole">54,95&nbsp;€</span></span></span></li>
+                        <div class="cart_box dropdown-menu dropdown-menu-right">
+                            <ul class="cart_list">
+                                <li><a href="#"
+                                    class="item_remove"><i class="ion-close"></i></a><a
+                                        href="#"><img 
+                                        width="50" height="50" alt="cart_thumb1"
+                                        src="/assets/files/culottes/culotte_5/36851533762117856286455670026456984987161761684087224828.webp">
+                                        Red Dead Redemption 2 PS4</a><span class="cart_quantity"> 1 x
+                                        <span class="cart_amount"><span
+                                                class="price_symbole">23,99&nbsp;€</span>
+                                            </span>
+                                        </span>
+                                </li>
+                                <li ><a href="#"
+                                        class="item_remove"><i class="ion-close"></i></a><a
+                                        href="#"><img 
+                                        width="50" height="50" alt="cart_thumb1"
+                                        src="/assets/files/culottes/culotte_9/116945623386141314594418897879593148825527931684087225230.webp">
+                                        Demons soul PS5</a><span class="cart_quantity"> 1 x 
+                                        <span class="cart_amount"><span 
+                                            class="price_symbole">44,99&nbsp;€</span>
+                                        </span>
+                                    </span>
+                                </li>
+                                <li ><a href="#"
+                                        class="item_remove"><i class="ion-close"></i></a><a
+                                        href="#"><img 
+                                        width="50" height="50" alt="cart_thumb1"
+                                        src="/assets/files/culottes/culotte_7/825380258783085919054835307976332473139779511684087224936.webp">
+                                        Manette Dual sense PS5</a><span  class="cart_quantity"> 3 x
+                                            <span class="cart_amount">
+                                                <span class="price_symbole">69,99&nbsp;€</span>
+                                            </span>
+                                        </span>
+                                </li>
                             </ul>
-                            <div  class="cart_footer">
-                                <p  class="cart_total"><strong
-                                        >Sous Total:</strong><span
-                                         class="cart_price"><span
-                                            
-                                            class="price_symbole"></span></span>1 057,58&nbsp;€ </p>
-                                <p  class="cart_buttons"><a 
-                                        routerlink="/cart" class="btn btn-fill-line view-cart"
-                                        ng-reflect-router-link="/cart" href="/cart">Voir Panier</a><a
-                                         routerlink="/checkout"
-                                        class="btn btn-fill-out checkout" ng-reflect-router-link="/checkout"
-                                        href="/checkout">Commander</a></p>
+                            <div class="cart_footer">
+                                <p class="cart_total">
+                                    <strong>Sous Total:</strong>
+                                    <span class="cart_price">
+                                        <span class="price_symbole"></span>
+                                    </span>138,97&nbsp;€</p>
+                                <p class="cart_buttons">
+                                    <a routerlink="/cart" class="btn btn-fill-line view-cart"
+                                        ng-reflect-router-link="/cart" href="/cart">Voir Panier</a>
+                                        <a routerlink="/checkout"
+                                            class="btn btn-fill-out checkout" ng-reflect-router-link="/checkout"
+                                            href="/checkout">Commander
+                                        </a>
+                                </p>
                             </div>
                         </div>
                     </li>
