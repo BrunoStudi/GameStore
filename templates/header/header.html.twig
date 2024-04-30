@@ -12,21 +12,32 @@
                 <div class="col-md-6">
                     <div class="text-center text-md-end">
                         <ul class="header_list">
-                            <li><a routerlink="/compare" ng-reflect-router-link="/compare" href="/compare">
+                            <li><a href="/compare">
                             <i class="ti-control-shuffle"></i><span>Comparer</span>
                             </a></li>
 
-                            <li><a routerlink="/wishlist" ng-reflect-router-link="/wishlist" href="/wishlist">
+                            <li><a href="/wishlist">
                             <i class="ti-heart"></i><span>Liste de souhaits</span>
                             </a></li>
 
-                            <li><a routerlink="/signin" ng-reflect-router-link="/signin" href="/signin">
-                            <i class="ti-user"></i><span>Connexion</span>
-                            </a></li>
+                            {% if app.user %}
+                                <li><a href="/account">
+                                    <i class="ti-user"></i><span>Mon compte</span>
+                                    </a>
+                                </li>
+								<li><a href="/logout">
+                                    <i class="ti-user"></i><span>Déconnexion</span>
+                                    </a>
+                                </li>		
+							{% else %}
+                                <li><a href="/login">
+                                    <i class="ti-user"></i><span>Connexion</span>
+                                    </a></li>
 
-                            <li><a routerlink="/signup" ng-reflect-router-link="/signup" href="/signup">
-                            <i class="ti-user"></i><span>S'enregistrer</span>
-                            </a></li>
+                                <li><a href="/register">
+                                    <i class="ti-user"></i><span>S'enregistrer</span>
+                                    </a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -73,15 +84,15 @@
                                             ng-reflect-router-link="/fqa"
                                             href="/fqa">Faq</a></li>
 
-                                    <li ><a routerlink="/signin" 
+                                    <li ><a routerlink="/login" 
                                             class="dropdown-item nav-link nav_item"
-                                            ng-reflect-router-link="/signin" 
-                                            href="/signin">Connexion</a></li>
+                                            ng-reflect-router-link="/login" 
+                                            href="/login">Connexion</a></li>
 
-                                    <li ><a routerlink="/signup" 
+                                    <li ><a routerlink="/register" 
                                             class="dropdown-item nav-link nav_item"
-                                            ng-reflect-router-link="/signup" 
-                                            href="/signup">S'enregistrer</a></li>
+                                            ng-reflect-router-link="/register" 
+                                            href="/register">S'enregistrer</a></li>
 
                                     <li ><a routerlink="/terms"
                                             class="dropdown-item nav-link nav_item" 
