@@ -25,8 +25,8 @@ class Category
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private ?array $imageUrls = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $imageUrl = null;
 
     #[ORM\Column(nullable: true)]
     private ?bool $isMega = null;
@@ -43,6 +43,7 @@ class Category
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
     }
 
     public function getId(): ?int
@@ -86,14 +87,14 @@ class Category
         return $this;
     }
 
-    public function getImageUrls(): ?array
+    public function getImageUrl(): ?string
     {
-        return $this->imageUrls;
+        return $this->imageUrl;
     }
 
-    public function setImageUrls(?array $imageUrls): static
+    public function setImageUrl(?string $imageUrl): static
     {
-        $this->imageUrls = $imageUrls;
+        $this->imageUrl = $imageUrl;
 
         return $this;
     }
