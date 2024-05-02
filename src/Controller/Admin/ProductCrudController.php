@@ -48,7 +48,8 @@ class ProductCrudController extends AbstractCrudController
             ])
             -> setBasePath("assets/images/produits")
             -> setUploadDir("/public/assets/images/produits")
-            -> setUploadedFileNamePattern('[randomhash].[extension]'),
+            -> setUploadedFileNamePattern('[randomhash].[extension]')
+            -> setRequired($pageName === Crud::PAGE_NEW),
             TextField::new('description'),
             TextEditorField::new('more_description'),
             TextEditorField::new('additionnal_infos'),

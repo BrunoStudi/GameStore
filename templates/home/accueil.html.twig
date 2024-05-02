@@ -1,125 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Game Store | Accueil{% endblock %}
+{% block title %} {{ app.session.get("setting").websiteName }} | Accueil{% endblock %}
 
 {% block body %}
 
 <div  class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
-    <div  id="carouselExampleControls" data-bs-ride="carousel"
-        class="carousel slide carousel-fade light_arrow">
+    <div id="carouselExampleControls" data-bs-ride="carousel" class="carousel slide carousel-fade light_arrow">
         <div  class="carousel-inner">
-            <div  class="carousel-item active background_bg"
-               
-                data-img-src="/assets/files/caroussel/banner1.jpg"
-                style="background-image: url(&quot;/assets/files/caroussel/banner1.jpg&quot;);">
-                <div  class="banner_slide_content">
-                    <div  class="container">
-                        <div  class="row">
-                            <div  class="col-lg-7 col-9">
-                                <div  class="banner_content overflow-hidden">
-                                    <h5  data-animation="slideInLeft"
-                                        data-animation-delay="0.5s"
-                                        class="mb-3 staggered-animation font-weight-light animated slideInLeft"
-                                        style="animation-delay: 0.5s; opacity: 1;">10% de réduction</h5>
-                                    <h2  data-animation="slideInLeft"
-                                        data-animation-delay="1s" class="staggered-animation animated slideInLeft"
-                                        style="animation-delay: 1s; opacity: 1;">Jeux Xbox One S</h2><a
-                                         data-animation="slideInLeft"
-                                        data-animation-delay="1.5s"
-                                        class="btn btn-fill-out rounded staggered-animation text-uppercase animated slideInLeft"
-                                        href="http://localhost:4300/"
-                                        style="animation-delay: 1.5s; opacity: 1;">Acheter Maintenant</a>
+
+            {% for slide in sliders %}
+                <div class="{{ loop.index < 2 ? 'carousel-item active' : 'carousel-item background_bg' }}"
+                        data-img-src="/assets/images/sliders/{{ slide.imageUrl }}"
+                        style="background-image: url(&quot;/assets/images/sliders/{{ slide.imageUrl }}&quot;);">
+                    <div class="banner_slide_content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7 col-9">
+                                    <div class="banner_content overflow-hidden">
+                                        <h5 data-animation="slideInLeft"
+                                            data-animation-delay="0.5s"
+                                            class="mb-3 staggered-animation font-weight-light animated slideInLeft"
+                                            style="animation-delay: 0.5s; opacity: 1;">{{ slide.description }}
+                                        </h5>
+                                        <h2 data-animation="slideInLeft"
+                                            data-animation-delay="1s" class="staggered-animation animated slideInLeft"
+                                            style="animation-delay: 1s; opacity: 1;">{{ slide.title }}
+                                        </h2>
+                                        <a data-animation="slideInLeft"
+                                            data-animation-delay="1.5s"
+                                            target="_blank"
+                                            class="btn btn-fill-out rounded staggered-animation text-uppercase animated slideInLeft"
+                                            href="{{ slide.buttonLink }}"
+                                            style="animation-delay: 1.5s; opacity: 1;">{{ slide.buttonText }}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            {% endfor %}
+
+            </div><a href="#carouselExampleControls" role="button" data-bs-slide="prev"
+                    class="carousel-control-prev"><i  class="ion-chevron-left"></i>
+                    </a>
+                    <a href="#carouselExampleControls" role="button" data-bs-slide="next"
+                    class="carousel-control-next"><i  class="ion-chevron-right"></i>
+                    </a>
             </div>
-            <div  class="carousel-item background_bg"
-                data-img-src="/assets/files/caroussel/banner2.png"
-                style="background-image: url(&quot;/assets/files/caroussel/banner2.png&quot;);">
-                <div  class="banner_slide_content">
-                    <div  class="container">
-                        <div  class="row">
-                            <div  class="col-lg-7 col-9">
-                                <div  class="banner_content overflow-hidden">
-                                    <h5  data-animation="slideInLeft"
-                                        data-animation-delay="0.5s"
-                                        class="mb-3 staggered-animation font-weight-light animated slideInLeft"
-                                        style="animation-delay: 0.5s; opacity: 1;">20% de réduction sur nos consoles
-                                    </h5>
-                                    <h2  data-animation="slideInLeft"
-                                        data-animation-delay="1s" class="staggered-animation animated slideInLeft"
-                                        style="animation-delay: 1s; opacity: 1;">Consoles de jeux</h2><a
-                                         data-animation="slideInLeft"
-                                        data-animation-delay="1.5s"
-                                        class="btn btn-fill-out rounded staggered-animation text-uppercase animated slideInLeft"
-                                        href="http://localhost:4300/"
-                                        style="animation-delay: 1.5s; opacity: 1;">Acheter Maintenant</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div  class="carousel-item background_bg"
-                data-img-src="/assets/files/caroussel/banner3.jpg"
-                style="background-image: url(&quot;/assets/files/caroussel/banner3.jpg&quot;);">
-                <div  class="banner_slide_content">
-                    <div  class="container">
-                        <div  class="row">
-                            <div  class="col-lg-7 col-9">
-                                <div  class="banner_content overflow-hidden">
-                                    <h5  data-animation="slideInLeft"
-                                        data-animation-delay="0.5s"
-                                        class="mb-3 staggered-animation font-weight-light animated slideInLeft text-light"
-                                        style="animation-delay: 0.5s; opacity: 1;">Jouez à un niveau supérieur</h5>
-                                    <h2  data-animation="slideInLeft"
-                                        data-animation-delay="1s" class="staggered-animation animated slideInLeft text-light"
-                                        style="animation-delay: 1s; opacity: 1;">Accessoires exclusifs</h2><a
-                                         data-animation="slideInLeft"
-                                        data-animation-delay="1.5s"
-                                        class="btn btn-fill-out rounded staggered-animation text-uppercase animated slideInLeft"
-                                        href="http://localhost:4300/"
-                                        style="animation-delay: 1.5s; opacity: 1;">Acheter Maintenant</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div  class="carousel-item background_bg"
-                data-img-src="/assets/files/caroussel/banner4.jpg"
-                style="background-image: url(&quot;/assets/files/caroussel/banner4.jpg&quot;);">
-                <div  class="banner_slide_content">
-                    <div  class="container">
-                        <div  class="row">
-                            <div  class="col-lg-7 col-9">
-                                <div  class="banner_content overflow-hidden">
-                                    <h5  data-animation="slideInLeft"
-                                        data-animation-delay="0.5s"
-                                        class="mb-3 staggered-animation font-weight-light animated slideInLeft"
-                                        style="animation-delay: 0.5s; opacity: 1;">Revendez vos jeux</h5>
-                                    <h2  data-animation="slideInLeft"
-                                        data-animation-delay="1s" class="staggered-animation animated slideInLeft"
-                                        style="animation-delay: 1s; opacity: 1;">Reprise</h2><a
-                                         data-animation="slideInLeft"
-                                        data-animation-delay="1.5s"
-                                        class="btn btn-fill-out rounded staggered-animation text-uppercase animated slideInLeft"
-                                        href="http://localhost:4300/"
-                                        style="animation-delay: 1.5s; opacity: 1;">Estimer Maintenant</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><a  href="#carouselExampleControls" role="button" data-bs-slide="prev"
-            class="carousel-control-prev"><i  class="ion-chevron-left"></i></a><a
-             href="#carouselExampleControls" role="button" data-bs-slide="next"
-            class="carousel-control-next"><i  class="ion-chevron-right"></i></a>
+        </div>
     </div>
 </div>
+
 <div  class="main_content">
     <div  class="section pb_20">
         <div  class="container">
