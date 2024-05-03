@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 
 class SettingCrudController extends AbstractCrudController
 {
@@ -51,11 +52,13 @@ class SettingCrudController extends AbstractCrudController
             UrlField::new('facebookLink'),
             UrlField::new('youtubeLink'),
             UrlField::new('instaLink'),
+            EmailField::new('email'),
             TelephoneField::new('phone'),
             TextField::new('street'),
             TextField::new('city'),
             TextField::new('zip_code'),
-            TextField::new('state')
+            TextField::new('state'),
+            TextField::new('copyright')
         ];
     }
     

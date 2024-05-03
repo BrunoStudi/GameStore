@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ app.session.get("setting").websiteName }} | {{ page.title}}{% endblock %}
+
+{% block body %}
+    {% include "top_page/top.html.twig" with { 'page_name':page.title } %}
+    <div class="main_content">
+        <div class="section">
+            <div class="container">
+                {{ page.content | raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
