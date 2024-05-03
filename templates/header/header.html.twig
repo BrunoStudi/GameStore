@@ -69,12 +69,14 @@
 
                             <div class="dropdown-menu">
                                 <ul>
-                                    <li ><a routerlink="/about"
-                                            class="dropdown-item nav-link nav_item" 
-                                            ng-reflect-router-link="/about"
-                                            href="/about">A propos</a></li>
+                                {% for page in app.session.get("headerPages") %}
+                                    <li ><a class="dropdown-item nav-link nav_item"
+                                            href="/page/{{ page.slug }}">{{ page.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
 
-                                    <li ><a routerlink="/contact" 
+                                    <!--<li ><a routerlink="/contact" 
                                             class="dropdown-item nav-link nav_item"
                                             ng-reflect-router-link="/contact" 
                                             href="/contact">Nous contacter</a></li>
@@ -97,7 +99,7 @@
                                     <li ><a routerlink="/terms"
                                             class="dropdown-item nav-link nav_item" 
                                             ng-reflect-router-link="/terms"
-                                            href="/terms">Termes & conditions</a></li>
+                                            href="/terms">Termes & conditions</a></li>-->
                                 </ul>
                             </div>
                         </li>

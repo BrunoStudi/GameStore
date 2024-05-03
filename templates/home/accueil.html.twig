@@ -56,19 +56,23 @@
     <div  class="section pb_20">
         <div  class="container">
             <div  class="row">
+            {% for collection in collections %}
                 <div  class="col-md-6">
-                    <div  class="single_banner rounded"><img 
-                            alt="shop_banner_img1"
-                            src="/assets/files/banner0.jpg">
+                    <div  class="single_banner"><img 
+                            class="rounded"
+                            alt="{{ collection.imageUrl }}"
+                            src="/assets/images/collections/{{ collection.imageUrl }}">
                         <div  class="single_banner_info">
-                            <h5  class="single_bn_title1 text-light">Best Seller</h5>
-                            <h3  class="single_bn_title text-light">Nouveautés</h3><a
+                            <h5  class="single_bn_title1 text-light">{{ collection.description }}</h5>
+                            <h3  class="single_bn_title text-light">{{ collection.title }}</h3><a
                                  class="single_bn_link bg-light border border-2 border-danger rounded-pill px-2"
-                                href="http://localhost:4400/">Acheter Maintenant</a>
+                                 target="_blank"
+                                href="{{ collection.buttonLink }}">{{ collection.buttonText }}</a>
                         </div>
                     </div>
                 </div>
-                <div  class="col-md-6">
+            {% endfor %}
+                <!--<div  class="col-md-6">
                     <div  class="single_banner rounded"><img 
                             alt="shop_banner_img1"
                             src="/assets/files/banner1.jpg">
@@ -79,7 +83,7 @@
                                 href="http://localhost:4400/">Acheter Maintenant</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

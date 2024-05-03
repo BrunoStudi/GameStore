@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Entity\Pages;
 use App\Entity\Product;
 use App\Entity\Setting;
 use App\Entity\Sliders;
 use App\Entity\Category;
+use App\Entity\Collections;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -41,16 +43,18 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Game Store');
+            ->setTitle('Administration');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
-        yield MenuItem::linkToCrud('Produits', 'fas fa-list', Product::class);
+        yield MenuItem::linkToCrud('Pages du site', 'fas fa-file', Pages::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Category::class);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-list', Product::class);
+        yield MenuItem::linkToCrud('Caroussels', 'fas fa-panorama', Sliders::class);
+        yield MenuItem::linkToCrud('Collections', 'fas fa-image', Collections::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
-        yield MenuItem::linkToCrud('Caroussels', 'fas fa-image', Sliders::class);
         yield MenuItem::linkToCrud('Configurations', 'fas fa-gear', Setting::class);
     }
 }
