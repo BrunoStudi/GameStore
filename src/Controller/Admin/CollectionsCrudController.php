@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class CollectionsCrudController extends AbstractCrudController
 {
@@ -36,6 +37,7 @@ class CollectionsCrudController extends AbstractCrudController
             TextField::new('description'),
             TextField::new('button_text'),
             UrlField::new('button_link'),
+            BooleanField::new('isMega'),
             ImageField::new('imageUrl')
             ->setBasePath("assets/images/collections")
             ->setUploadDir("public/assets/images/collections")

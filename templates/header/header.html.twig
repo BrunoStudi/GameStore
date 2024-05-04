@@ -54,7 +54,7 @@
                         class="navbar-toggler collapsed">
                         <span class="ion-android-menu"></span>
                 </button>
-                <a routerlink="/" class="navbard-brand" ng-reflect-router-link="/" href="/"><h2 class="text-uppercase">{{ app.session.get("setting").websiteName }}</h2></a>
+                <a href="/"><h2 class="text-uppercase">{{ app.session.get("setting").websiteName }}</h2></a>
                 <div id="navbarSupportedContent" class="navbar-collapse justify-content-end collapse" style="">
                     <ul class="navbar-nav">
                         <li class="dropdown"><a routerlink="/" 
@@ -69,143 +69,56 @@
 
                             <div class="dropdown-menu">
                                 <ul>
-                                {% for page in app.session.get("headerPages") %}
-                                    <li ><a class="dropdown-item nav-link nav_item"
-                                            href="/page/{{ page.slug }}">{{ page.title }}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-
-                                    <!--<li ><a routerlink="/contact" 
-                                            class="dropdown-item nav-link nav_item"
-                                            ng-reflect-router-link="/contact" 
-                                            href="/contact">Nous contacter</a></li>
-
-                                    <li ><a routerlink="/fqa"
-                                            class="dropdown-item nav-link nav_item" 
-                                            ng-reflect-router-link="/fqa"
-                                            href="/fqa">Faq</a></li>
-
-                                    <li ><a routerlink="/login" 
-                                            class="dropdown-item nav-link nav_item"
-                                            ng-reflect-router-link="/login" 
-                                            href="/login">Connexion</a></li>
-
-                                    <li ><a routerlink="/register" 
-                                            class="dropdown-item nav-link nav_item"
-                                            ng-reflect-router-link="/register" 
-                                            href="/register">S'enregistrer</a></li>
-
-                                    <li ><a routerlink="/terms"
-                                            class="dropdown-item nav-link nav_item" 
-                                            ng-reflect-router-link="/terms"
-                                            href="/terms">Termes & conditions</a></li>-->
+                                    {% for page in app.session.get("headerPages") %}
+                                        <li ><a class="dropdown-item nav-link nav_item"
+                                                href="/page/{{ page.slug }}">{{ page.title }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </li>
                         <li class="dropdown dropdown-mega-menu">
                             <a  href="#" data-bs-toggle="dropdown" 
                                 class="dropdown-toggle nav-link" 
-                                aria-expanded="false">Produits</a>
-
+                                aria-expanded="false">Produits
+                            </a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Accessoires</li>
-                                            <li ><a class="dropdown-item nav-link nav_item"
-                                                ng-reflect-router-link="#"
-                                                href="#">Casques Playstation 4</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                ng-reflect-router-link="#"
-                                                href="#">Casques Playstation 5</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                ng-reflect-router-link="#"
-                                                href="#">Manettes Playstation 4</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                ng-reflect-router-link="#"
-                                                href="#">Manettes Playstation 5</a></li>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul >
-                                            <li class="dropdown-header">Consoles</li>
-                                            <li ><a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Playstation 4</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Playstation 5</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Xbox One S</a></li>
-
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Xbox Series</a></li>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Jeux</li>
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Jeux Playstation 4</a></li>
-
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Jeux Playstation 5</a></li>
-                                                    
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Jeux Xbox One S</a></li>
-                                                    
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Jeux Xbox Series</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Services</li>
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Services Playstation 4</a></li>
-                                                    
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Services Playstation 5</a></li>
-                                                    
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Services Xbox One</a></li>
-                                                    
-                                            <li><a  class="dropdown-item nav-link nav_item"
-                                                    ng-reflect-router-link="#"
-                                                    href="#">Services Xbox Series</a></li>
-                                        </ul>
-                                    </li>
+                                    {% for category in app.session.get('categories') %}
+                                        <li class="mega-menu-col col-lg-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ category.name }}</li>
+                                                {% for product in category.products %}
+                                                    {% if loop.index < 4 %}
+                                                        <li >
+                                                            <a class="dropdown-item nav-link nav_item"
+                                                                href="/product/{{ product.slug }}">
+                                                                <img src="/assets/images/produits/{{ product.imageUrls[0] }}"
+                                                                    width="50" height="50" alt="">
+                                                                {{ product.name }}
+                                                            </a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                                 <div class="d-lg-flex menu_banners row g-3 px-3">
+                                    {% for collection in app.session.get('megaCollections') %}
                                     <div class="col-sm-4">
                                         <div class="header-banner"><img
                                                 alt="menu_banner1"
-                                                src="/assets/files/megaCollection/playstation5.jpg">
+                                                src="/assets/images/collections/{{ collection.imageUrl }}">
                                             <div class="banne_info mt-4">
-                                                <h6>10% de remise</h6>
-                                                <h4>Nouveautés</h4>
-                                                <a href="http://localhost:4300/">Acheter</a>
+                                                <h6>{{ collection.description }}</h6>
+                                                <h4>{{ collection.title }}</h4>
+                                                <a href="{{ collection.buttonLink }}">{{ collection.buttonText }}</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <!--<div class="col-sm-4">
                                         <div class="header-banner"><img
                                                 alt="menu_banner1"
                                                 src="/assets/files/megaCollection/playstation4.jpg">
@@ -226,7 +139,8 @@
                                                 <a href="http://localhost:4300/">Acheter</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
+                                    {% endfor %}
                                 </div>
                             </div>
                         </li>
