@@ -59,7 +59,7 @@
                                 </div><span class="rating_num">(21)</span>
                             </div>
                             <div class="pr_desc">
-                                <p> Description de l'article:&nbsp{{ product.description }} </p>
+                                <p></br></br> Description de l'article:</br>{{ product.description }}</br></p>
                             </div>
                             <div class="product_sort_info">
                                 <ul>
@@ -89,9 +89,9 @@
                                         value="+" class="plus"></div>
                             </div>
                             <div class="cart_btn"><button type="button" class="btn btn-fill-out btn-addtocart"><i
-                                        class="icon-basket-loaded"></i> Add to cart
+                                        class="icon-basket-loaded"></i> Ajouter au panier
                                 </button><button type="button" class="btn btn-fill-out btn-addtocart"><i
-                                        class="icon-basket-loaded"></i> Pay Now </button></div>
+                                        class="icon-basket-loaded"></i> Payer maintenant </button></div>
                             <div class="cart_btn"><a href="#" class="add_compare"><i class="icon-shuffle"></i></a><a
                                     href="#" class="add_wishlist"><i class="icon-heart"></i></a>
                             </div>
@@ -99,8 +99,12 @@
                         <hr>
                         <ul class="product-meta">
                             <li>SKU: <a href="#">BE45VGRT</a></li>
-                            <li>Category: <a href="#">Culotes </a></li>
-                            <li>Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a></li>
+                            <li>Categorie(s): 
+                                {% for category in product.categories %}
+                                    <a href="#">{{ category }}, </a>
+                                {% endfor %}
+                            </li>
+                            <!--<li>Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a></li>-->
                         </ul>
                         <div class="product_share"><span>Share:</span>
                             <ul class="social_icons">
@@ -140,7 +144,7 @@
                                 produit :</br></br> {{ product.description }} </div>
                             <div id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab"
                                 class="tab-pane fade"> Détails du produit
-                                :</br></br> {{ product.moreDescription }} </div>
+                                :</br></br> {{ product.moreDescription | raw  }} </div>
                             <div id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab" class="tab-pane fade">
                                 <!--<div class="comments">
                                     <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span></h5>
@@ -226,7 +230,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="heading_s1">
-                        <h3>Releted Products</h3>
+                        <h3>Produits Liés</h3>
                     </div>
                     <div data-margin="20"
                         data-responsive="{&quot;0&quot;:{&quot;items&quot;: &quot;1&quot;}, &quot;481&quot;:{&quot;items&quot;: &quot;2&quot;}, &quot;768&quot;:{&quot;items&quot;: &quot;3&quot;}, &quot;1199&quot;:{&quot;items&quot;: &quot;4&quot;}}"
@@ -237,8 +241,8 @@
                                 <div class="owl-item active" style="width: 264px; margin-right: 20px;">
                                     <div class="item">
                                         <div class="product">
-                                            <div class="product_img"><a href="shop-product-detail.html"><img
-                                                        src="assets/images/product_img1.jpg" alt="product_img1"></a>
+                                            <div class="product_img"><a href="/product/"><img
+                                                        src="assets/images/produits/image.png" alt="product_img1"></a>
                                                 <div class="product_action_box">
                                                     <ul class="list_none pr_action_btn">
                                                         <li class="add-to-cart"><a href="#"><i
@@ -252,9 +256,9 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                            
                                             <div class="product_info">
-                                                <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress
-                                                        For Woman</a>
+                                                <h6 class="product_title"><a href="shop-product-detail.html">Titre Produit</a>
                                                 </h6>
                                                 <div class="product_price"><span
                                                         class="price">$45.00</span><del>$55.25</del>
@@ -281,9 +285,12 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
+                                        
                                     </div>
                                 </div>
+                               
                                 <div class="owl-item active" style="width: 264px; margin-right: 20px;">
                                     <div class="item">
                                         <div class="product">
@@ -302,6 +309,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                            
                                             <div class="product_info">
                                                 <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray
                                                         Tuxedo</a></h6>

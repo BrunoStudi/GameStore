@@ -31,9 +31,14 @@ class PagesCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')
+                ->hideOnIndex()
+                ->hideOnForm(),
             TextField::new('title'),
-            SlugField::new('slug') -> setTargetFieldName('title')->hideOnForm(),
+            SlugField::new('slug') 
+                ->setTargetFieldName('title')
+                ->hideOnForm()
+                ->hideOnIndex(),
             TextEditorField::new('content'),
             BooleanField::new('isHead'),
             BooleanField::new('isFoot')

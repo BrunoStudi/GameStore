@@ -35,10 +35,14 @@ class ProductCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id') -> hideOnForm(),
+            IdField::new('id') 
+                ->hideOnForm()
+                ->hideOnIndex(),
             AssociationField::new('categories'),
             TextField::new('name'),
-            SlugField::new('slug') -> setTargetFieldName('name'),
+            SlugField::new('slug') 
+                ->setTargetFieldName('name')
+                ->hideOnIndex(),
             ImageField::new('imageUrls')
             -> setFormTypeOptions([
                 "multiple" => true,
@@ -51,12 +55,12 @@ class ProductCrudController extends AbstractCrudController
             -> setUploadedFileNamePattern('[randomhash].[extension]')
             -> setRequired($pageName === Crud::PAGE_NEW),
             TextField::new('description'),
-            TextEditorField::new('more_description'),
-            TextEditorField::new('additionnal_infos'),
+            TextEditorField::new('more_description')->hideOnIndex(),
+            TextEditorField::new('additionnal_infos')->hideOnIndex(),
             MoneyField::new('solde_price') -> setCurrency("EUR"),
             MoneyField::new('regular_price') -> setCurrency("EUR"),
             IntegerField::new('Stock'),
-            AssociationField::new('categories'),
+            AssociationField::new('relatedProducts')->hideOnIndex(),
             BooleanField::new('isBestSeller'),
             BooleanField::new('isNewArrival'),
             BooleanField::new('isFeatured'),

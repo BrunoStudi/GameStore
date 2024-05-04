@@ -35,10 +35,12 @@ class SettingCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')
+                ->hideOnForm()
+                ->hideOnIndex(),
             TextField::new('website_name'),
             TextField::new('description'),
-            IntegerField::new('taxe_rate'),
+            IntegerField::new('taxe_rate')->hideOnIndex(),
             ImageField::new('logo')
             -> setBasePath("assets/images/setting")
             -> setUploadDir("/public/assets/images/setting")
@@ -49,9 +51,9 @@ class SettingCrudController extends AbstractCrudController
                 'USD' => 'USD',
                 'JPY' => 'JPY'
             ]),
-            UrlField::new('facebookLink'),
-            UrlField::new('youtubeLink'),
-            UrlField::new('instaLink'),
+            UrlField::new('facebookLink')->hideOnIndex(),
+            UrlField::new('youtubeLink')->hideOnIndex(),
+            UrlField::new('instaLink')->hideOnIndex(),
             EmailField::new('email'),
             TelephoneField::new('phone'),
             TextField::new('street'),
