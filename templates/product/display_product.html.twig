@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-4 col-6">
     <div class="product">
         <div class="product_img">
-            <a href="shop-product-detail.html">
+            <a href="/product/{{ product.slug }}">
                 <img alt="product_img1" src="/assets/images/produits/{{ product.imageUrls[0] }}" width="275px" height="185px">
             </a>
             <div class="product_action_box">
@@ -32,7 +32,7 @@
         </div>
         <div class="product_info">
             <h6 class="product_title">
-                <a href="/product/bikini-unicolore-ctel-shop">
+                <a href="/product/{{ product.slug }}">
                     {{ product.name }}
                 </a>
             </h6>

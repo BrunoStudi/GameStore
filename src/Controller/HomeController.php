@@ -47,10 +47,35 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'sliders' => $sliders,
             'collections' => $collections,
+            //'products'=> $products,
             'productsBestSeller' => $productRepo->findBy(['isBestSeller'=>true]),
             'productsNewArrival' => $productRepo->findBy(['isNewArrival'=>true]),
             'productsFeatured' => $productRepo->findBy(['isFeatured'=>true]),
             'productsSpecialOffer' => $productRepo->findBy(['isSpecialOffer'=>true])
+        ]);
+    }
+
+    #[Route('/product/{slug}', name: 'app_product_by_slug')]
+    public function showProduc(string $slug, ProductRepository $productRepo) 
+    {
+        $product = $productRepo->findOneBy(['slug'=>$slug]);
+
+        if(!$product)
+        {
+            //error
+            return $this->redirectToRoute('app_error');
+        }
+
+        return $this->render('product\product_slug.html.twig', [
+            'product'=>$product
+        ]);
+    }
+
+    #[Route('/error', name: 'app_error')]
+    public function errorPage() 
+    {
+        return $this->render('page/not-found.html.twig', [
+            'controller_name' => 'PageController'
         ]);
     }
 }
