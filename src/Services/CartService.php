@@ -82,7 +82,14 @@ class CartService {
                 $current_sub_total = $product->getSoldePrice() * $quantity;
                 $sub_total += $current_sub_total;
                 $result['items'][] = [
-                    'product' => $product,
+                    'product' => 
+                    [
+                        'id' => $product->getId(),
+                        'name' => $product->getName(),
+                        'imageUrls' => $product->getImageUrls(),
+                        'soldePrice' => $product->getSoldePrice(),
+                        'regularPrice' => $product->getRegularPrice()
+                    ],
                     'quantity' => $quantity,
                     'sub_total' => $current_sub_total
                 ];
