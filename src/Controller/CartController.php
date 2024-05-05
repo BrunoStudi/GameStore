@@ -18,20 +18,25 @@ class CartController extends AbstractController
     #[Route('/cart', name: 'app_cart')]
     public function index(): Response
     {
+        $cart = $this->cartService->getCartDetails();
+
         return $this->render('cart/index.html.twig', [
             'controller_name' => 'CartController',
+            'cart' => $cart
         ]);
     }
 
-    #[Route('/cart/add/{productId}/{count}', name: 'app_cart')]
+    #[Route('/cart/add/{productId}/{count}', name: 'app_add_to_cart')]
     public function addToCart(string $productId, int $count = 1): Response
     {
         $this->cartService->addToCart($productId, $count);
+        return $this->redirectToRoute("app_cart");
+    }
 
-        dd($this->cartService->getCart());
-        
-        return $this->render('cart/index.html.twig', [
-            'controller_name' => 'CartController',
-        ]);
+    #[Route('/cart/remove/{productId}/{count}', name: 'app_remove_to_cart')]
+    public function removeToCart(string $productId, int $count = 1): Response
+    {
+        $this->cartService->removeToCart($productId, $count);
+        return $this->redirectToRoute("app_cart");
     }
 }
