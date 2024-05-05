@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}{{ app.session.get("setting").websiteName }} | Connexion{% endblock %}
 
 {% block body %}
 

@@ -36,8 +36,7 @@ class ProductCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id') 
-                ->hideOnForm()
-                ->hideOnIndex(),
+                ->hideOnForm(),
             AssociationField::new('categories'),
             TextField::new('name'),
             SlugField::new('slug') 
