@@ -70,7 +70,8 @@ class CartService {
         $cart = $this->getCart();
         $result = [
             'items' => [],
-            'sub_total' => 0
+            'sub_total' => 0,
+            'cart_count' => 0
         ];
         $sub_total = 0;
 
@@ -86,6 +87,7 @@ class CartService {
                     [
                         'id' => $product->getId(),
                         'name' => $product->getName(),
+                        'slug' => $product->getSlug(),
                         'imageUrls' => $product->getImageUrls(),
                         'soldePrice' => $product->getSoldePrice(),
                         'regularPrice' => $product->getRegularPrice()
@@ -94,6 +96,7 @@ class CartService {
                     'sub_total' => $current_sub_total
                 ];
                 $result['sub_total'] = $sub_total;
+                $result['cart_count'] += $quantity;
             }
             else
             {

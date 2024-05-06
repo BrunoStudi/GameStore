@@ -56,7 +56,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/product/{slug}', name: 'app_product_by_slug')]
-    public function showProduc(string $slug, ProductRepository $productRepo) 
+    public function showProduct(string $slug, ProductRepository $productRepo) 
     {
         $product = $productRepo->findOneBy(['slug'=>$slug]);
 
@@ -68,6 +68,26 @@ class HomeController extends AbstractController
 
         return $this->render('product\product_slug.html.twig', [
             'product'=>$product
+        ]);
+    }
+
+    #[Route('/product/get/{id}', name: 'app_product_by_id')]
+    public function getProductById(string $id, ProductRepository $productRepo) 
+    {
+        $product = $productRepo->findOneBy(['id'=>$id]);
+
+        if(!$product)
+        {
+            //error
+            return $this->json(false);
+        }
+
+        return $this->json([
+            'id' => $product->getId(),
+            'name' => $product->getName(),
+            'imagesUrls' => $product->getImageUrls(),
+            'soldePrice' => $product->getSoldePrice(),
+            'regularPrice' => $product->getRegularPrice()
         ]);
     }
 
